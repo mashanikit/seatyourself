@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { minimum: 2 }
   validates :email, presence: true, format: { with: /\A\w+\@\w+\./ }
-  validates :phone_number, presence: true, format: { with: /\d{3}\w+\d{3}\-\d{4}\z/ }
+  validates :phone_number, presence: true, format: { with: /\d{3}\W+\d{3}\-\d{4}\z/ }
 end
