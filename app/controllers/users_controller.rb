@@ -12,6 +12,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new
+    @user.name                  = params[:user][:name]
+    @user.phone_number          = params[:user][:phone_number]
     @user.email                 = params[:user][:email]
     @user.password              = params[:user][:password]
     @user.password_confirmation = params[:user][:password_confirmation]
