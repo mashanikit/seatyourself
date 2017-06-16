@@ -7,7 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <header>
+    <nav>
+      <ul>
+        <li><%= link_to "Home", root_url %></li>
+        <% if current_user %>
+        <li class="logout">
+          Welcome <%= current_user.name %>!
+          |
+          <%= link_to "Log-out", sessions_path, method: :delete %>
+        </li>
+        <% if current_user.restaurant %>
+        <% else %>
+        <li><%= link_to "Add Your Restaurant", root_url %></li>
+        <% end %>
+        <% else %>
+        <li>
+          <%= link_to "Sign-up", new_users_path %>
+          |
+          <%= link_to "Log-in", new_sessions_path %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+      <% if flash.any? %>
+        <% flash.each do |key, value| %>
+          <p class="<%= key %>">
+            <%= value %>
+          </p>
+        <% end %>
+      <% end %>
+  </header>
 <%= yield %>
 
 </body>
