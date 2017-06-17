@@ -7,6 +7,15 @@
   font-family: $karla;
 }
 
+.welcome_user {
+  color: rgb(162, 29, 47);
+  padding-right: 1em;
+  font: {
+    family: $poppins;
+    weight: bold;
+  }
+}
+
 .topnav {
 background-color: #bebebe;
 text-align: right;

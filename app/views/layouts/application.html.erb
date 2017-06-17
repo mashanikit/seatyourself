@@ -14,7 +14,7 @@
         <li class="homelink"><%= link_to "Home", root_url %></li>
         <% if current_user %>
         <li class="logout">
-          Welcome <%= current_user.name %>!
+          <span class="welcome_user">Welcome <%= current_user.name %>!</span>
           |
           <%= link_to "Log-out", sessions_path, method: :delete %>
         </li>
