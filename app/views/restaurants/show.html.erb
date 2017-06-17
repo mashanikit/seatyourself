@@ -1,0 +1,6 @@
+<%= link_to("Back to All Restaurants", root_url) %>
+<p><%= image_tag(@restaurant.image, size: "300x300")%></p>
+<p>
+<%= @restaurant.name %>, <%= @restaurant.address %><br>
+<%= link_to "Reserve Now", new_reservation_path(current_user)%>
+</p>

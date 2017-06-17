@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Seatyourself</title>
+  <title>Seat Yourself</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Frijole|Karla|Orbitron|Poppins|Ubuntu+Condensed" rel="stylesheet">
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <header>
+    <nav class="topnav">
+      <ul>
+        <li class="homelink"><%= link_to "Home", root_url %></li>
+        <% if current_user %>
+        <li class="logout">
+          <span class="welcome_user">Welcome <%= current_user.name %>!</span>
+          |
+          <%= link_to "Log-out", sessions_path, method: :delete %>
+        </li>
+        <% if current_page?(new_restaurant_path(current_user)) %>
+        <% else %>
+        <li><%= link_to "Add Your Restaurant", new_restaurant_path(current_user) %></li>
+        <% end %>
+        <% else %>
+        <li>
+          <%= link_to "Sign-up", new_users_path %>
+          |
+          <%= link_to "Log-in", new_sessions_path %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+    <% if flash.any? %>
+      <% flash.each do |key, value| %>
+        <p class="<%= key %>">
+          <%= value %>
+        </p>
+      <% end %>
+    <% end %>
+  </header>
+  <%= yield %>
+  <footer>
+    <div class="footerdiv">
+      <nav>
+        <ul class="leftfootnav">
+          <li><%= link_to "Contact Us"%></li>
+          <li><%= link_to "Trip Advisor"%></li>
+          <li><%= link_to "Yelp"%></li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="rightfootnav">
+          <li><%= link_to "About Us"%></li>
+          <li><%= link_to "Bitmaker"%></li>
+          <li><%= link_to "Baby Animals!!!"%></li>
+        </ul>
+      </nav>
+    </div>
+    <p>2017 &copy;Bitmaker: Jennie, Jon, Masha, Ronin</p>
+  </footer>
 </body>
 </html>

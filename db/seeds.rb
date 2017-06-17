@@ -5,7 +5,33 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+matty = User.create(
+        name: "Ultron",
+        phone_number: '123-890-1230',
+        email: "killemall@me.com",
+        password: "password",
+        password_confirmation: "password"
+        )
+michael = User.create(
+        name: "Michael Bay",
+        phone_number: '0987892673',
+        email: "explosions@me.com",
+        password: "password",
+        password_confirmation: "password"
+        )
+joeys = Restaurant.create(
+        name: "Joeys",
+        neighbourhood: "Yonge and Dundas",
+        address: "123 Yonge Street",
+        cuisine_type: "American",
+        opens: 11, closes: 23, capacity: 200, owner_id: 1
+        )
 
-ronen = User.create(name: 'Ronen Annason', phone_number: '555-555-5555', email: 'ronen@gmail.com')
-
-joeys = Restaurant.create(name: 'Joeys', user_id: :params[id], neighbourhood: "Yonge & Dundas", address: "234 Yonge Street", cuisine_type: 'American')
+cactus_club = Restaurant.create(
+        name: "Cactus Club",
+        neighbourhood: "Financial District",
+        address: "123 King Street West",
+        cuisine_type: "Asian/American",
+        opens: 12, closes: 23, capacity: 100, owner_id: 2
+        )
+>>>>>>> aea54f36a27a7b293cfa592bbfb0d52db24516bf

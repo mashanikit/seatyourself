@@ -1,0 +1,102 @@
+@import 'mixins';
+@import 'variables';
+* {
+  box-sizing: border-box;
+  margin: 0;
+  text-align: center;
+  font-family: $karla;
+}
+
+.welcome_user {
+  color: rgb(162, 29, 47);
+  padding-right: 1em;
+  font: {
+    family: $poppins;
+    weight: bold;
+  }
+}
+
+.topnav {
+background-color: #bebebe;
+text-align: right;
+height: 3em;
+width: 100%;
+line-height: 3em;
+
+  li {
+    float: right;
+    padding-right: 2em;
+    color: rgb(78, 23, 35);
+  }
+  .homelink {
+    float: left;
+    padding-left: 2em;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  a {
+    color: rgb(78, 23, 35);
+    text-decoration: none;
+    margin: 0 1em 0 1em;
+    font: {
+      weight: bold;
+      size: 18px;
+      family: $poppins;
+    }
+
+    &:active {
+      color: rgb(116, 39, 56);
+    }
+  }
+}
+
+footer {
+  background-color: #bebebe;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  @include clearfix;
+  nav {
+    width: 100%;
+    padding-left: 6em;
+  }
+  a {
+    color: rgb(78, 23, 35);
+    text-decoration: none;
+    margin: 0 1em 0 1em;
+    font: {
+      family: $poppins;
+      weight: bold;
+      size: 13px;
+    }
+    &:active {
+      color: rgb(116, 39, 56);
+    }
+  }
+  ul {
+      color: rgb(78, 23, 35);
+      list-style-type: none;
+      float: left;
+      padding: 2em;
+  }
+  li {
+    text-align: left;
+    padding: 5px;
+  }
+  p {
+    color: rgb(55, 4, 14);
+    font: {
+      size: 10px;
+      weight: bold;
+    }
+  }
+}
+.footerdiv {
+  @include clearfix;
+}
+.leftfootnav {
+  margin-right: 0;
+}
