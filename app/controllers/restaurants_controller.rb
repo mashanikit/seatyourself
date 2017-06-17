@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])  
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def new
@@ -13,15 +13,9 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new
+    @restaurant = Restaurant.new(restaurant_params)
 
-    @restaurant.name = params[:restaurant][:name]
-    @restaurant.neighbourhood = params[:restaurant][:neighbourhood]
-    @restaurant.address = params[:restaurant][:address]
-    @restaurant.opens = params[:restaurant][:opens]
-    @restaurant.closes = params[:restaurant][:closes]
-    @restaurant.capacity = params[:restaurant][:capacity]
-    @restaurant.cuisine_type = params[:restaurant][:cuisine_type]
+    @restaurant.owner_id = session[:user_id]
 
     if @restaurant.save
       flash[:notice] = 'Restaurant was added!'
@@ -42,5 +36,9 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :neighbourhood, :address, :cuisine_type, :opens, :closes, :capacity)
   end
 end

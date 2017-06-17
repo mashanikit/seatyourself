@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616202531) do
+ActiveRecord::Schema.define(version: 20170617010324) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20170616202531) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.integer  "user_id"
     t.string   "name"
     t.string   "neighbourhood"
     t.string   "address"
@@ -34,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170616202531) do
     t.integer  "closes"
     t.integer  "capacity"
     t.string   "image",         default: "http://static.boredpanda.com/blog/wp-content/uuuploads/cute-baby-animals/cute-baby-animals-2.jpg"
+    t.integer  "owner_id"
   end
 
   create_table "users", force: :cascade do |t|
