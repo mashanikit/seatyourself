@@ -17,9 +17,9 @@
           |
           <%= link_to "Log-out", sessions_path, method: :delete %>
         </li>
-        <% if current_user.restaurant %>
+        <% if current_page?(new_restaurant_path(current_user)) %>
         <% else %>
-        <li><%= link_to "Add Your Restaurant", root_url %></li>
+        <li><%= link_to "Add Your Restaurant", new_restaurant_path(current_user) %></li>
         <% end %>
         <% else %>
         <li>

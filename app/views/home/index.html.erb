@@ -7,4 +7,7 @@
   <p> Neighbourhood: <%= restaurant.neighbourhood %></p>
   <p> Address: <%= restaurant.address %></p>
   <p> Cuisine: <%= restaurant.cuisine_type%> </p>
+  <% if restaurant.owner %>
+  <p>Owner: <%= restaurant.owner.name %></p>
+  <% end %>
 <% end %>

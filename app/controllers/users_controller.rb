@@ -11,12 +11,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new
-    @user.name                  = params[:user][:name]
-    @user.phone_number          = params[:user][:phone_number]
-    @user.email                 = params[:user][:email]
-    @user.password              = params[:user][:password]
-    @user.password_confirmation = params[:user][:password_confirmation]
+    @user = User.new(user_params)
 
     if @user.save
       # default behaviour of flash works on a redirect
@@ -36,5 +31,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :phone_number, :email, :password, :password_confirmation)
+
   end
 end
