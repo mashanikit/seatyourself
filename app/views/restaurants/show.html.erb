@@ -2,5 +2,5 @@
 <p><%= image_tag(@restaurant.image, size: "300x300")%></p>
 <p>
 <%= @restaurant.name %>, <%= @restaurant.address %><br>
-<%= link_to "Reserve Now", new_reservation_path(current_user)%>
+<%= link_to "Reserve Now", new_restaurant_reservation_path(@restaurant)%>
 </p>

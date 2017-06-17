@@ -7,6 +7,21 @@
   font-family: $karla;
 }
 
+.jumbopic {
+  background-image: url("https://fthmb.tqn.com/5ZqGb1yQHfVs8lbcPxgnnLhwWGA=/5256x3508/filters:no_upscale()/about/picnic-table-set-for-meal-outdoors-549593731-57f3cf4b3df78c690f531a30.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.welcome_user {
+  color: rgb(162, 29, 47);
+  padding-right: 1em;
+  font: {
+    family: $poppins;
+    weight: bold;
+  }
+}
+
 .topnav {
 background-color: #bebebe;
 text-align: right;
@@ -46,9 +61,7 @@ line-height: 3em;
 
 footer {
   background-color: #bebebe;
-  position: absolute;
   width: 100%;
-  bottom: 0;
   @include clearfix;
   nav {
     width: 100%;
