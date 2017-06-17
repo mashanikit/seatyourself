@@ -3,7 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 @import "mixins";
-
+.jumbopic {
+  background-image: url("https://fthmb.tqn.com/5ZqGb1yQHfVs8lbcPxgnnLhwWGA=/5256x3508/filters:no_upscale()/about/picnic-table-set-for-meal-outdoors-549593731-57f3cf4b3df78c690f531a30.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 100%;
+}
 h1 {
   @include clearfix;
   font: {
