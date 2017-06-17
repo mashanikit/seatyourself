@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Seatyourself</title>
+  <title>Seat Yourself</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Frijole|Karla|Orbitron|Poppins|Ubuntu+Condensed" rel="stylesheet">
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <header>
-    <nav>
+    <nav class="topnav">
       <ul>
-        <li><%= link_to "Home", root_url %></li>
+        <li class="homelink"><%= link_to "Home", root_url %></li>
         <% if current_user %>
         <li class="logout">
           Welcome <%= current_user.name %>!
@@ -30,15 +31,33 @@
         <% end %>
       </ul>
     </nav>
-      <% if flash.any? %>
-        <% flash.each do |key, value| %>
-          <p class="<%= key %>">
-            <%= value %>
-          </p>
-        <% end %>
+    <% if flash.any? %>
+      <% flash.each do |key, value| %>
+        <p class="<%= key %>">
+          <%= value %>
+        </p>
       <% end %>
+    <% end %>
   </header>
-<%= yield %>
-
+  <%= yield %>
+  <footer>
+    <div class="footerdiv">
+      <nav>
+        <ul class="leftfootnav">
+          <li><%= link_to "Contact Us"%></li>
+          <li><%= link_to "Trip Advisor"%></li>
+          <li><%= link_to "Yelp"%></li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="rightfootnav">
+          <li><%= link_to "About Us"%></li>
+          <li><%= link_to "Bitmaker"%></li>
+          <li><%= link_to "Baby Animals!!!"%></li>
+        </ul>
+      </nav>
+    </div>
+    <p>2017 &copy;Bitmaker: Jennie, Jon, Masha, Ronin</p>
+  </footer>
 </body>
 </html>

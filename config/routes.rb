@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'home/index'
   root 'home#index'
+  resources :reservations
+
   resource :users, only: [:new, :create]
   resource :sessions, only: [:new, :create, :destroy]
   resources :restaurants

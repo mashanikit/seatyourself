@@ -14,7 +14,6 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-
     if @reservation.save
       flash[:notice] = "Your reservation has been successfully created!"
       redirect_to reservations_path
