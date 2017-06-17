@@ -1,8 +1,9 @@
 class RestaurantsController < ApplicationController
 
   def index
-
+    @restaurants = Restaurant.all
   end
+
 
   def show
     @restaurant = Restaurant.find(params[:id])
@@ -14,7 +15,7 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    
+
     @restaurant.owner_id = session[:user_id]
 
     if @restaurant.save
@@ -36,9 +37,11 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.destroy
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :neighbourhood, :address, :cuisine_type, :opens, :closes, :capacity, :image)
+    params.require(:restaurant).permit(:name, :neighbourhood, :address, :cuisine_type, :opens, :closes, :capacity, :image, :menu)
   end
 end

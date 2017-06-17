@@ -24,7 +24,12 @@ joeys = Restaurant.create(
         neighbourhood: "Yonge and Dundas",
         address: "123 Yonge Street",
         cuisine_type: "American",
-        opens: 11, closes: 23, capacity: 200, owner_id: 1
+        opens: 11, closes: 23, capacity: 200, owner_id: 1,
+        description: "Upscale casual, downtown Toronto. The first JOEY to hit the streets of downtown Toronto. Located just off Yonge on Dundas, this place is a work of art - exposed brick walls, open-air dining, crazy custom lighting and the Enomatic wine system. We could go on, but you should come and see it for yourself.",
+        menu: "http://joeyrestaurants.com/menu/#!/restaurant/404/our-food",
+        price_range: "$$$",
+        image: "https://uwaterloo.ca/school-of-accounting-and-finance/sites/ca.school-of-accounting-and-finance/files/uploads/images/joeyeaton6.jpg"
+
         )
 
 cactus_club = Restaurant.create(
@@ -32,5 +37,10 @@ cactus_club = Restaurant.create(
         neighbourhood: "Financial District",
         address: "123 King Street West",
         cuisine_type: "Asian/American",
-        opens: 12, closes: 23, capacity: 100, owner_id: 2
+        opens: 12, closes: 23, capacity: 100, owner_id: 2,
+        description: "Located in the downtown core at First Canadian Place, our Eastern Flagship location boasts re-imagined menu items and elevated design.",
+        menu: "https://www.cactusclubcafe.com/menus/",
+        price_range: "$$$$",
+        image: "https://www.cactusclubcafe.com/content/uploads/2016/05/111915_FullBleedImage_TORO_Locations_Header_1160px_500px_web_v1_NoText.jpg"
+
         )

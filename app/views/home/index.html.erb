@@ -6,6 +6,7 @@
 <h2>All Restaurants</h2>
 
 <% @restaurants.each do |restaurant| %>
+
   <h3>Name: <%= link_to restaurant.name, restaurant_path(restaurant.id) %></h3>
   <p> Neighbourhood: <%= restaurant.neighbourhood %></p>
   <p> Address: <%= restaurant.address %></p>
@@ -13,4 +14,5 @@
   <% if restaurant.owner %>
   <p>Owner: <%= restaurant.owner.name %></p>
   <% end %>
+
 <% end %>
