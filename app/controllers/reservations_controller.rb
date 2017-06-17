@@ -13,10 +13,15 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reservation = @restaurant.reservations.new(reservation_params)
+    # @reservation = Reservation.new(reservation_params)
+
     if @reservation.save
+      @reservation.user_id = session[:user_id]
       flash[:notice] = "Your reservation has been successfully created!"
-      redirect_to reservations_path
+      render :show
+      # redirect_to restaurants_path
     else
       render :new
     end
