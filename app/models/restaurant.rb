@@ -5,4 +5,4 @@ class Restaurant < ApplicationRecord
   validates :neighbourhood, presence: true
   validates :address, presence: true
   validates :cuisine_type, presence: true
-end
+end 
