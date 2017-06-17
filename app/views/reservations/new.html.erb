@@ -1,7 +1,7 @@
 <h1>Make A New Reservation</h1>
 
 
-<%= form_for @reservation do |f| %>
+<%= form_for([@restaurant, @reservation]) do |f| %>
   <p>
     <%= f.label :size, 'Size of Party' %><br>
     <%= f.number_field :size, max: 8, min: 1 %>
