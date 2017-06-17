@@ -55,9 +55,7 @@ line-height: 3em;
 
 footer {
   background-color: #bebebe;
-  position: absolute;
   width: 100%;
-  bottom: 0;
   @include clearfix;
   nav {
     width: 100%;

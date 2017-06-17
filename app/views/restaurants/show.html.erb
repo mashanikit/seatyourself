@@ -1,6 +1,18 @@
-<%= link_to("Back to All Restaurants", root_url) %>
-<p><%= image_tag(@restaurant.image, size: "300x300")%></p>
-<p>
-<%= @restaurant.name %>, <%= @restaurant.address %><br>
+
+<p class = "restaurant_image"><%= image_tag(@restaurant.image, size: "300x300")%></p>
+
+
+
+<div class = "info">
+
+  <span> <%= @restaurant.name %> </span> <br>
+  <p id = "address"><%= @restaurant.address %> <br>
+  <p> Description: </p> <%= @restaurant.description %> <br>
+  <p> Neighbourhood: </p> <%= @restaurant.neighbourhood %> <br>
+  <p> Price Range: </p> <%= @restaurant.price_range %> <br>
+<%= link_to "Menu", @restaurant.menu %> |
 <%= link_to "Reserve Now", new_reservation_path(current_user)%>
-</p>
+</div>
+
+
+<%= link_to("Back to All Restaurants", root_url) %>

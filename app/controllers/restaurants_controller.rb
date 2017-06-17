@@ -1,9 +1,13 @@
 class RestaurantsController < ApplicationController
 
   def index
-    @Restaurants = Restaurant.all
+    @restaurants = Restaurant.all
   end
 
+
+  def show
+    @restaurant = Restaurant.find(params[:id])
+  end
 
   def new
     @restaurant = Restaurant.new
@@ -38,6 +42,6 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :neighbourhood, :address, :cuisine_type, :opens, :closes, :capacity)
+    params.require(:restaurant).permit(:name, :neighbourhood, :address, :cuisine_type, :opens, :closes, :capacity, :menu)
   end
 end
