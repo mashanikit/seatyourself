@@ -28,7 +28,7 @@ joeys = Restaurant.create(
         description: "Upscale casual, downtown Toronto. The first JOEY to hit the streets of downtown Toronto. Located just off Yonge on Dundas, this place is a work of art - exposed brick walls, open-air dining, crazy custom lighting and the Enomatic wine system. We could go on, but you should come and see it for yourself.",
         menu: "http://joeyrestaurants.com/menu/#!/restaurant/404/our-food",
         price_range: "$$$",
-        image: "https://uwaterloo.ca/school-of-accounting-and-finance/sites/ca.school-of-accounting-and-finance/files/uploads/images/joeyeaton6.jpg"
+        image: "http://gvrpix.com/wp-content/uploads/2012/11/DSC7983.jpg"
 
         )
 

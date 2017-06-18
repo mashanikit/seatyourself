@@ -15,7 +15,6 @@
         <% if current_user %>
         <li class="logout">
           <span class="welcome_user">Welcome <%= current_user.name %>!</span>
-          |
           <%= link_to "Logout", sessions_path, method: :delete %>
         </li>
         <% if current_page?(new_restaurant_path(current_user)) %>
