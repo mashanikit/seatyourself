@@ -1,13 +1,12 @@
 <div class="jumbopic">
   <h1 class="homeheader">SEAT YOURSELF</h1>
-  <% image_tag("https://fthmb.tqn.com/5ZqGb1yQHfVs8lbcPxgnnLhwWGA=/5256x3508/filters:no_upscale()/about/picnic-table-set-for-meal-outdoors-549593731-57f3cf4b3df78c690f531a30.jpg", size: "1350x500")%>
 </div>
-
+<div class="index_restaurant">
 <h2>All Restaurants</h2>
 
 <% @restaurants.each do |restaurant| %>
 
-  <h3>Name: <%= link_to restaurant.name, restaurant_path(restaurant.id) %></h3>
+  <h3><%= link_to restaurant.name, restaurant_path(restaurant.id) %></h3>
   <p> Neighbourhood: <%= restaurant.neighbourhood %></p>
   <p> Address: <%= restaurant.address %></p>
   <p> Cuisine: <%= restaurant.cuisine_type%> </p>
@@ -16,3 +15,4 @@
   <% end %>
 
 <% end %>
+</div>
