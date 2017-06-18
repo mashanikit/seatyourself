@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170617190217) do
+ActiveRecord::Schema.define(version: 20170617194706) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 20170617190217) do
     t.integer  "capacity"
     t.string   "image",         default: "http://static.boredpanda.com/blog/wp-content/uuuploads/cute-baby-animals/cute-baby-animals-2.jpg"
     t.integer  "owner_id"
+    t.string   "price_range"
+    t.text     "description"
+    t.string   "menu"
   end
 
   create_table "users", force: :cascade do |t|

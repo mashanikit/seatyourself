@@ -7,8 +7,8 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <header>
+<body class="body" >
+  <header class="header">
     <nav class="topnav">
       <ul>
         <li class="homelink"><%= link_to "Home", root_url %></li>
@@ -39,8 +39,10 @@
       <% end %>
     <% end %>
   </header>
-  <%= yield %>
-  <footer>
+  <main class="main" >
+    <%= yield %>
+  </main>
+  <footer class="footer" >
     <div class="footerdiv">
       <nav>
         <ul class="leftfootnav">
@@ -56,8 +58,8 @@
           <li><%= link_to "Baby Animals!!!"%></li>
         </ul>
       </nav>
+      <p>2017 &copy;Bitmaker: Jennie, Jon, Masha, Ronin</p>
     </div>
-    <p>2017 &copy;Bitmaker: Jennie, Jon, Masha, Ronin</p>
   </footer>
 </body>
 </html>
