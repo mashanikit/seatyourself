@@ -7,6 +7,7 @@
   background-image: url("wine.jpg");
   background-size: contain;
   background-repeat: no-repeat;
+  position: relative;
   height: 500px;
   width: 100%;
   margin-top: 1.5em;
@@ -15,8 +16,8 @@
 h1 {
   @include clearfix;
   position: absolute;
-  bottom: 1em;
-  right: 1em;
+  bottom: 0.5em;
+  right: 1.5em;
   color: rgba(255, 255, 255, 0.8);
   text-decoration: underline;
   border-bottom: 1px solid transparent;
@@ -39,10 +40,14 @@ h1 {
   a {
     text-align: left;
     text-decoration: none;
+    &:visited{
+      color: rgb(78, 23, 35);
+    }
   }
   h2 {
-    padding-bottom: 2em;
+    padding-bottom: 1em;
     margin-top: 0;
+    color: rgba(56, 48, 50, 0.95);
   }
   h3 {
     padding-top: 1em;
