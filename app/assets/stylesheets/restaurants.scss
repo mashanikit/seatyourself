@@ -17,7 +17,14 @@
 }
 
 .name {
-  font-size: 40px;
+  font: {
+    size: 34px;
+  weight: bold;
+  family: $orbitron;
+  }
+  line-height: 1.5em;
+  color: rgba(56, 48, 50, 0.87);
+
 }
 
 .info > p {
@@ -34,54 +41,16 @@
 
 
 .restaurant_image {
-  margin-top: 20px;
-  width: 100%;
+  width: 95%;
 }
 
 .back_restaurants {
   text-decoration: none;
   font-weight: bold;
   &:link{
-    color: rgb(78, 23, 35)
+    color: rgb(78, 23, 35);
   }
-  &:active{
-    color: grey;
+  &:hover{
+    color: #444444;
   }
 }
-
-@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-
-fieldset, label { margin: 0; padding: 0; }
-body{ margin: 20px; }
-h1 { font-size: 1.5em; margin: 10px; }
-
-/****** Style Star Rating Widget *****/
-
-.price_range  {
-  border: none;
-  align-content: center;
-}
-
-.price_range > input { display: none; }
-.price_range > label:before {
-  margin: 5px;
-  font-size: 1.25em;
-  display: inline-block;
-  content: "$";
-}
-
-.price_range > label {
-  color: #ddd;
- float: right;
-}
-
-/***** CSS Magic to Highlight Stars on Hover *****/
-
-.price_range > input:checked ~ label, /* show gold star when clicked */
-.price_range:not(:checked) > label:hover, /* hover current star */
-.price_range:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
-
-.price_range > input:checked + label:hover, /* hover current star when changing price_range */
-.price_range > input:checked ~ label:hover,
-.price_range > label:hover ~ input:checked ~ label, /* lighten current selection */
-.price_range > input:checked ~ label:hover ~ label { color: #FFED85;  }

@@ -40,10 +40,14 @@ h1 {
   a {
     text-align: left;
     text-decoration: none;
+    &:visited{
+      color: rgb(78, 23, 35);
+    }
   }
   h2 {
-    padding-bottom: 2em;
+    padding-bottom: 1em;
     margin-top: 0;
+    color: rgba(56, 48, 50, 0.95);
   }
   h3 {
     padding-top: 1em;
