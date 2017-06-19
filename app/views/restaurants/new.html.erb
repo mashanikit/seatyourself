@@ -1,7 +1,7 @@
 <h1>Add Your Restaurant!</h1>
 
 <% if @restaurant.errors.any? %>
-  <ul>
+  <ul class="error">
     <% @restaurant.errors.full_messages.each do |m| %>
       <li><%= m %></li>
     <% end %>

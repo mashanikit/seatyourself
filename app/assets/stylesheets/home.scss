@@ -44,7 +44,8 @@ h1 {
   a {
     text-align: left;
     text-decoration: none;
-    &:visited{
+    &:visited,
+    &:link {
       color: rgb(78, 23, 35);
     }
   }

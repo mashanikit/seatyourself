@@ -1,5 +1,12 @@
 <h1>Make A New Reservation</h1>
 
+<% if @reservation.errors.any? %>
+  <ul class="error">
+    <% @reservation.errors.full_messages.each do |m| %>
+      <li><%= m %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_for([@restaurant, @reservation]) do |f| %>
   <p>
@@ -11,38 +18,11 @@
     <%= f.date_field :date, min: Date.today %>
   </p>
 
-
-<h3> Reservation Time</h3>
-
   <p>
-    
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "5:00pm") %>
+    <%= f.label :time, 'Please Choose A Time' %><br>
+    <%= f.time_field :time, min: @restaurant.opens, max: @restaurant.closes%>
+  </p>
 
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "5:30pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "6:00pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "6:30pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "7:00pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "7:30pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "8:00pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "8:30pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "9:00pm") %>
-    </p>
   <p>
     <%= f.submit "Save" %>
   </p>
