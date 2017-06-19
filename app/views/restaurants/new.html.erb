@@ -11,56 +11,56 @@
 <%= form_for @restaurant do |f| %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :neighbourhood %>
+    <%= f.label :neighbourhood %><br>
     <%= f.text_field :neighbourhood %>
   </div>
 
   <div class='field'>
-    <%= f.label :address %>
+    <%= f.label :address %><br>
     <%= f.text_field :address %>
   </div>
 
   <div class='field'>
-    <%= f.label :cuisine_type, "Cuisine Type" %>
+    <%= f.label :cuisine_type, "Cuisine Type" %><br>
     <%= f.text_field :cuisine_type %>
   </div>
 
   <div class='field'>
-    <%= f.label :opens, "Opens at" %>
+    <%= f.label :opens, "Opens at" %><br>
     <%= f.number_field :opens %>
   </div>
 
   <div class="field">
-    <%= f.label :closes, "Closes at" %>
+    <%= f.label :closes, "Closes at" %><br>
     <%= f.number_field :closes %>
   </div>
 
   <div class="field">
-    <%= f.label :capacity, "Maximum seats" %>
+    <%= f.label :capacity, "Maximum seats" %><br>
     <%= f.number_field :capacity %>
   </div>
 
   <div class="field">
-    <%= f.label :image, "Photo(optional)" %>
+    <%= f.label :image, "Photo(optional)" %><br>
     <%= f.text_field :image %>
   </div>
 
   <div class="field">
-    <%= f.label :description, "Description" %>
+    <%= f.label :description, "Description" %><br>
     <%= f.text_area :description %>
   </div>
 
   <div class="field">
-    <%= f.label :menu, "Menu" %>
+    <%= f.label :menu, "Menu" %><br>
     <%= f.text_field :menu %>
   </div>
 
-  <fieldset class="price_range">
+  <fieldset class="price_range"><br>
       <input type="radio" id="price_range" name="price_range" value="4" /><label class = "full" for="star4" title="Awesome - 5 stars"></label>
 
       <input type="radio" id="price_range" name="price_range" value="3" /><label class = "full" for="star3" title="Pretty good - 4 stars"></label>

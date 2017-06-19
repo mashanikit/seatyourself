@@ -1,9 +1,75 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "mixins";
+@import "variables";
+.user_show {
+  position: relative;
+  margin-top: 5em;
+}
+.profile_links {
+  margin-left: 2em;
+  .link1 {
+    position: absolute;
+    top: -2em;
+  }
+  .link2 {
+    position: absolute;
+    top: -2em;
+    left: 9.5em;
+  }
+  .link3 {
+    position: absolute;
+    top: -2em;
+    left: 17.5em;
+  }
+  h2 {
+    float: left;
+    padding: 0.5em;
+  }
+  a,
+  a:link,
+  a:visited {
+  color: rgb(77, 17, 31);
+  text-decoration: none;
+    &:hover {
+    color: rgb(61, 61, 61);
+    }
+  }
+}
+
 form {
   border: rgb(78, 23, 35) solid 7px;
   margin: 40px;
   padding: 20px;
   box-shadow: 10px 10px 5px #888888;
+    .field,
+    p {
+      padding: 1em;
+      input[type=radio] {
+        padding: 2em;
+      }
+      input {
+        padding: 5px;
+        width: 20em;
+        margin-bottom: 0;
+      }
+      label {
+        float: left;
+        padding-left: 39%;
+        color: rgb(55, 55, 55);
+        font: {
+          weight: bold;
+          size: 12px;
+          family: $poppins;
+        }
+      }
+    }
+}
+
+
+ul {
+  .error {
+    list-style-type: none;
+  }
 }

@@ -1,5 +1,3 @@
-<h1>Create User</h1>
-
 <% if @user.errors.any? %>
   <ul>
     <% @user.errors.full_messages.each do |m| %>
@@ -7,7 +5,10 @@
     <% end %>
   </ul>
 <% end %>
-<%= form_for @user do |f| %>
+
+<%= render "profile" %>
+
+<%= form_for(@user, url: "/users")  do |f| %>
 
   <div class="field">
     <%= f.label :name %><br>
@@ -16,7 +17,7 @@
 
   <div class="field">
     <%= f.label :phone_number %><br>
-    <%= f.telephone_field :phone_number %>
+    <%= f.telephone_field :phone_number, :value => @user.number %>
   </div>
 
   <div class='field'>
@@ -34,6 +35,8 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
-  <%= f.submit 'Sign Up' %>
+  <%= f.submit %>
 
 <% end %>
+
+</div>

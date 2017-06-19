@@ -1,0 +1,10 @@
+<h1>My Profile</h1>
+<div class="user_show">
+  <div class="profile_links">
+    <h2 class="link1"><%= link_to "My Reservations", users_path %></h2>
+      <% if current_user.owned_restaurants.any? %>
+    <h2 class="link2"><%= link_to "My Restaurants", '/users/own_restaurants' %></h2>
+      <% else %>
+      <% end %>
+    <h2 class="link3"><%= link_to "Edit Profile", edit_users_path %></h2>
+    </div>

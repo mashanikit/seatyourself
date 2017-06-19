@@ -1,0 +1,8 @@
+<%= render "profile" %>
+  <div class="reservations">
+    <% @user.reservations.each do |reservation| %>
+    <p>Restaurant: <%= link_to "#{reservation.restaurant.name}", restaurant_path(reservation.restaurant_id) %></p>
+    <p>Party of <span class='user_reservations'><%= reservation.size %><span> | on <span class='user_reservations'><%= reservation.date %></span> at <span class='user_reservations'><%= reservation.time %></span></p>
+    <% end %>
+  </div>
+</div>
