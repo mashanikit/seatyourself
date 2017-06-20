@@ -19,13 +19,13 @@ class ReservationsController < ApplicationController
     @reservation.user_id = session[:user_id]
 
     @reservation.restaurant = @restaurant
-
     # confirmation = @reservation.date.time
     if @reservation.save
       @reservation.user.increment!(:loyalty_points, 5)
       flash[:notice] = "Your reservation has been successfully created for #{@reservation.date.strftime("%b %d")} at #{@reservation.human_time}"
 
       redirect_to restaurant_path(params[:restaurant_id])
+
     else
       render :new
     end
