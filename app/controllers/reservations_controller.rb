@@ -52,4 +52,6 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:size, :date, :time)
   end
 
+
+
 end
