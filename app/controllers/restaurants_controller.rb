@@ -28,11 +28,17 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def update
+    @restaurant = Restaurant.find(params[:id])
 
+    if @restaurant.update_attributes(restaurant_params)
+      redirect_to restaurant_url(@restaurant)
+    else
+      render :edit
+    end
   end
 
   def destroy
