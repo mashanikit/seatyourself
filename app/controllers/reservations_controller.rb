@@ -17,13 +17,15 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = session[:user_id]
+
     @reservation.restaurant = @restaurant
 
-    # if @reservation.reso_date_not_in_past && reso_time_is_during_open_hours
+   # confirmation = @reservation.date.time
     if @reservation.save
       @reservation.user.increment!(:loyalty_points, 5)
-      flash[:notice] = "Your reservation has been successfully created!"
-      redirect_to restaurant_path(params[:restaurant_id])
+      flash[:notice] = “Your reservation has been successfully created for #{@reservation.date.strftime(“%b %d”)} at #{@reservation.human_time}”
+
+     redirect_to restaurant_path(params[:restaurant_id])
     else
       render :new
     end
