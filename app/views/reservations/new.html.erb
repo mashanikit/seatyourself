@@ -1,12 +1,5 @@
 <h1>Make A New Reservation</h1>
 
-<% if @reservation.errors.any? %>
-  <ul class="error">
-    <% @reservation.errors.full_messages.each do |m| %>
-      <li><%= m %></li>
-    <% end %>
-  </ul>
-<% end %>
 
 <%= form_for([@restaurant, @reservation]) do |f| %>
   <p>
@@ -18,11 +11,12 @@
     <%= f.date_field :date, min: Date.today %>
   </p>
 
-  <p>
-    <%= f.label :time, 'Please Choose A Time' %><br>
-    <%= f.label :time, @restaurant.operating_hours %><br>
-    <%= f.select :time, ((@restaurant.opens)..(@restaurant.closes)).each.map{|i| i.to_s + ':00'} %>
-  </p>
+<p>
+  <%= f.label :time, 'Please Choose A Time' %><br>
+  <%= f.label :time, @restaurant.operating_hours %><br>
+  <%= f.select :time, ((@restaurant.opens)..(@restaurant.closes)).each.map{|i| i.to_s + ':00'} %>
+</p>
+
 
   <p>
     <%= f.submit "Save" %>

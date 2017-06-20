@@ -18,6 +18,7 @@ class Reservation < ApplicationRecord
       errors.add(:time, "Sorry, the Restaurant is Closed at This Time, please enter another")
     end
   end
+  
   def has_room
     if restaurant.current_capacity(date, time) >= size
     else
