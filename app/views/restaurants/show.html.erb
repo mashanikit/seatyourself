@@ -1,28 +1,24 @@
-
 <span class = "name" > <%= @restaurant.name %> </span> <br>
 <p><%= image_tag(@restaurant.image, class: "restaurant_image")%></p>
 
-
-
 <div class = "info">
-
 
   <p id = "address"><%= @restaurant.address %> <br>
   <p> Description </p> <%= @restaurant.description %> <br>
   <p> Neighbourhood </p> <%= @restaurant.neighbourhood %> <br>
   <p> Price Range </p> <%= @restaurant.price_range %> <br>
-<%= link_to "Menu", @restaurant.menu %> |
 
+  <%= link_to "Menu", @restaurant.menu %> |
 
   <% if current_user %>
-  <%= link_to "Reserve Now", new_restaurant_reservation_path(@restaurant)%>
+  <%= link_to "Reserve Now", new_restaurant_reservation_path(@restaurant) %> |
+
+  <%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant) %>
 
   <% else %>
     <%= link_to "Sign Up", new_users_path %>
   <% end %>
 
-
 </div>
-
 
 <%= link_to("Back to All Restaurants", root_url, class:'back_restaurants') %>

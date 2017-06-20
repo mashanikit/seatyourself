@@ -8,24 +8,31 @@
   margin-top: 5em;
 }
 .profile_links {
-  margin-left: 2em;
+  margin-left: 3em;
+  font-size: 14px;
   .link1 {
     position: absolute;
     top: -2em;
+    background-color: rgba(181, 181, 181, 0.38);
+    box-shadow: 2px 2px 1px #888888;
   }
   .link2 {
     position: absolute;
     top: -2em;
-    left: 9.5em;
+    left: 10.5em;
+    background-color: rgba(181, 181, 181, 0.38);
+    box-shadow: 2px 2px 1px #888888;
   }
   .link3 {
     position: absolute;
     top: -2em;
-    left: 17.5em;
+    left: 18.7em;
+    background-color: rgba(181, 181, 181, 0.38);
+    box-shadow: 2px 2px 1px #888888;
   }
   h2 {
     float: left;
-    padding: 0.5em;
+    padding: 8px;
   }
   a,
   a:link,
@@ -65,11 +72,4 @@ form {
         }
       }
     }
-}
-
-
-ul {
-  .error {
-    list-style-type: none;
-  }
 }

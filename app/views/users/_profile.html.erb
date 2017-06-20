@@ -5,6 +5,7 @@
       <% if current_user.owned_restaurants.any? %>
     <h2 class="link2"><%= link_to "My Restaurants", '/users/own_restaurants' %></h2>
       <% else %>
+    <h2 class="link2">My Restaurants</h2>
       <% end %>
     <h2 class="link3"><%= link_to "Edit Profile", edit_users_path %></h2>
     </div>
