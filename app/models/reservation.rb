@@ -32,7 +32,6 @@ class Reservation < ApplicationRecord
     end
   end
 
-
 end
   # validates :max_resos
 

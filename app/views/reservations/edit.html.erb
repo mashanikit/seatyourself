@@ -19,7 +19,7 @@
   <p>
     <%= f.label :time, 'Please Choose A Time' %><br>
     <%= f.label :time, @restaurant.operating_hours %><br>
-    <%= f.time_field :time, min: @restaurant.opens, max: @restaurant.closes%>
+    <%= f.select :time, ((@restaurant.opens)..(@restaurant.closes)).each.map{|i| i.to_s + ':00'} %>
   </p>
 
   <p>

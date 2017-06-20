@@ -14,7 +14,7 @@ class Restaurant < ApplicationRecord
   end
 
   def operating_hours
-    "From #{self.opens} to #{self.closes}" 
+    "From #{self.opens}:00 to #{self.closes}:00" 
   end
 
 end
