@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     if @user.save
       # default behaviour of flash works on a redirect
       flash[:notice] = 'Account successfully created!'
+      session[:user_id] = @user.id
       redirect_to root_url
     else
       # flash.now works on the same request
@@ -47,7 +48,7 @@ class UsersController < ApplicationController
       flash[:error] = "Must be logged in"
       redirect_to root_url and return
     end
-    
+
     @user.assign_attributes(user_params)
 
     if @user.save

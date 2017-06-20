@@ -7,8 +7,9 @@
   <p> Description </p> <%= @restaurant.description %> <br>
   <p> Neighbourhood </p> <%= @restaurant.neighbourhood %> <br>
   <p> Price Range </p> <%= @restaurant.price_range %> <br>
-
-  <%= link_to "Menu", @restaurant.menu %> |
+  <p> Capacity </p><%= @restaurant.capacity %><br>
+  <p> Hours of Operation </p><%= @restaurant.opens%>-<%= @restaurant.closes %><br>
+<%= link_to "Menu", @restaurant.menu %> |
 
   <% if current_user %>
   <%= link_to "Reserve Now", new_restaurant_reservation_path(@restaurant) %> |
