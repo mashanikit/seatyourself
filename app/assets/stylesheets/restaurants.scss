@@ -12,7 +12,6 @@
 }
 
 .name {
-  margin-left: 25%;
   font: {
     size: 34px;
   weight: bold;
@@ -21,12 +20,27 @@
   line-height: 1.5em;
   color: rgba(56, 48, 50, 0.87);
 
+
 }
 
-.info > p {
+
+
+.info  {
+  p {
   font-size: 20px;
   font-weight: bold;
   display:inline;
+  }
+  a {
+    font-weight: bold;
+    &:link,
+    &:visited {
+      color: rgb(70, 12, 19);
+    }
+    &:hover {
+      color: rgb(60, 60, 60);
+    }
+  }
 }
 
 #address {
@@ -37,6 +51,8 @@
 
 
 .restaurant_image {
+  margin-top: 20px;
+  width: 100%;
   width: 95%;
 }
 
