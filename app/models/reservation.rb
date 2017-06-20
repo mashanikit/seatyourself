@@ -6,18 +6,14 @@ class Reservation < ApplicationRecord
 
   validates :size, numericality: true
 
-  validate  :has_room
-
-  def has_room
-    if restaurant.current_capacity(date, time) >= size
-    else
-      errors.add (:size, "We are currently full, please choose another time")
-    end  
-  end
-
-
-
-
+  # validate  :has_room
+  #
+  # def has_room
+  #   if restaurant.current_capacity(date, time) >= size
+  #   else
+  #     errors.add (:size, "We are currently full, please choose another time")
+  #   end
+  # end
 
 end
   # validates :max_resos
