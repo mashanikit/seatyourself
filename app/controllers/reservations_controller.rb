@@ -16,12 +16,11 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = session[:user_id]
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @reservation.restaurant = @restaurant
+    @reservation.restaurant_id = params[:restaurant_id]
     @reservation.user.increment!(:loyalty_points, 5)
-
-    if  @reservation.save
-      flash[:notice] = "Your reservation has been successfully created!"
+    # confirmation = @reservation.date.time
+    if @reservation.save
+      flash[:notice] = "Your reservation has been successfully created for #{@reservation.date.strftime("%b %d")} at #{@reservation.human_time}"
       redirect_to restaurant_path(params[:restaurant_id])
     else
       render :new
@@ -52,7 +51,6 @@ class ReservationsController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(:size, :date, :time)
   end
-
 
 
 end
