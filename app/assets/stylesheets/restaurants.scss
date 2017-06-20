@@ -1,3 +1,69 @@
 // Place all the styles related to the restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+
+.info {
+  border: rgb(78, 23, 35) solid 7px;
+  margin: 40px;
+  padding: 20px;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.name {
+  font: {
+    size: 34px;
+  weight: bold;
+  family: $orbitron;
+  }
+  line-height: 1.5em;
+  color: rgba(56, 48, 50, 0.87);
+
+
+}
+
+
+
+.info  {
+  p {
+  font-size: 20px;
+  font-weight: bold;
+  display:inline;
+  }
+  a {
+    font-weight: bold;
+    &:link,
+    &:visited {
+      color: rgb(70, 12, 19);
+    }
+    &:hover {
+      color: rgb(60, 60, 60);
+    }
+  }
+}
+
+#address {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 25px;
+}
+
+
+.restaurant_image {
+  margin-top: 20px;
+  width: 100%;
+  width: 95%;
+}
+
+.back_restaurants {
+  text-decoration: none;
+  font-weight: bold;
+  &:link,
+  &:visited{
+    color: rgb(78, 23, 35);
+  }
+  &:hover{
+    color: #444444;
+  }
+}

@@ -1,0 +1,46 @@
+<h1>Make A New Reservation</h1>
+
+<% if @reservation.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being added</h2>
+<<<<<<< HEAD
+
+    <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+=======
+>>>>>>> 9e5ba1704cbf648862d9f2d3a427427cdcb7ca19
+
+    <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_for([@restaurant, @reservation]) do |f| %>
+  <p>
+    <%= f.label :size, 'Size of Party' %><br>
+    <%= f.number_field :size, max: 8, min: 1 %>
+  </p>
+  <p>
+    <%= f.label :date, 'Please Choose A Date' %><br>
+    <%= f.date_field :date, min: Date.today %>
+  </p>
+
+  <p>
+
+    <%= f.label :time, 'Please Choose A Time' %><br>
+    <%= f.label :time, @restaurant.operating_hours %><br>
+    <%= f.select :time, ((@restaurant.opens)..(@restaurant.closes)).each.map{|i| i.to_s + ':00'} %>
+  </p>
+
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+<% end %>

@@ -1,6 +1,3 @@
-<h1>Add Your Restaurant!</h1>
-
-
 <% if @restaurant.errors.any? %>
   <ul class="error">
     <% @restaurant.errors.full_messages.each do |m| %>
@@ -61,11 +58,11 @@
     <%= f.text_field :menu %>
   </div>
 
-
-  <p>
+  <div class="field">
     <%= f.label :price_range, 'Please choose a Price Range' %><br>
     <%= f.select :price_range, [['$','$'], ['$$','$$'], ['$$$', '$$$'], ['$$$$', '$$$$']] %>
-  </p>
+  </div>
+
 
   <%= f.submit %>
 

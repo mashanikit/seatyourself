@@ -1,0 +1,11 @@
+<%= render "profile" %>
+  <div class="reservations">
+    <% @user.reservations.each do |reservation| %>
+        <p>
+          Restaurant: <strong><%= link_to "#{reservation.restaurant.name}", restaurant_path(reservation.restaurant_id) %></strong><br>
+          Party of <span class='user_reservations'><%= reservation.size %><span> | on <span class='user_reservations'><%= reservation.date.strftime("%b %d") %></span> at <span class='user_reservations'><%= reservation.human_time %></span><br>
+          <%= link_to("Edit", edit_restaurant_reservation_path(reservation.restaurant, reservation))%> | <%= link_to("Delete", "/restaurants/#{reservation.restaurant_id}/reservations/#{reservation.id}", method: :delete, data: {confirm: "Cancel this reservation?"}) %>
+        </p>
+    <% end %>
+  </div>
+</div>

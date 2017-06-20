@@ -1,0 +1,11 @@
+<h3>All Reservations</h3>
+<% @reservation.each do |reservation| %>
+  <ul>
+    <li>
+      <p> Date: <%= reservation.date %> at <%= reservation.time %>  </p>
+      <p> Size: <%= reservation.size %> seats </p>
+    </li>
+  </ul>
+<% end %>
+
+<%= link_to("Back to All Restaurants", root_url, class:'back_restaurants') %>

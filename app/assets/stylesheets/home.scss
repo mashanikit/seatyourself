@@ -1,3 +1,67 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+@import "mixins";
+.jumbopic {
+  background-image: url("wine.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 500px;
+  width: 97%;
+  margin-top: 1.5em;
+  margin-left: 1.5em;
+  z-index: 100;
+}
+h1 {
+  @include clearfix;
+  position: absolute;
+  bottom: 0.5em;
+  right: 1.5em;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, rgba(215, 215, 215, 0), white);
+  border-image-slice: 1;
+  z-index: 150;
+  font: {
+    family: $ucondensed;
+    size: 40px;
+  }
+}
+.index_restaurant,
+.reservations,
+.restaurants {
+  border: rgb(78, 23, 35) solid 7px;
+  margin: 40px;
+  padding: 4em;
+  box-shadow: 10px 10px 5px #888888;
+  @include clearfix;
+  p {
+    padding: 1px;
+    padding-left: 4em;
+    text-align: left;
+  }
+
+  h2,
+  h3,
+  a {
+    text-align: left;
+    text-decoration: none;
+    padding-left: 1.5em;
+    &:visited,
+    &:link {
+      color: rgb(78, 23, 35);
+    }
+  }
+  h2 {
+    padding-bottom: 1em;
+    margin-top: 0;
+    color: rgba(56, 48, 50, 0.95);
+  }
+  h3 {
+    padding-top: 1em;
+    padding-bottom: 5px;
+  }
+}

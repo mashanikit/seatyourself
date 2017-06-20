@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import 'layout';
+@import 'home';
+@import 'restaurants';
+@import "users";
+@import "sessions"

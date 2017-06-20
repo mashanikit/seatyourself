@@ -1,0 +1,7 @@
+<h1>All Restaurants</h1>
+<% @restaurants.each do |restaurant| %>
+  <p> Name: <%= restaurant.name %></p>
+  <p> Neighbourhood: <%= restaurant.address %></p>
+  <p> Address: <%= restaurant.neighbourhood %></p>
+  <p> Cuisine: <%= restaurant.cuisine_type%> </p>
+<% end %>

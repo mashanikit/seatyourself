@@ -10,10 +10,9 @@ class SessionsController < ApplicationController
       # Send a cookie to user's browser
       session[:user_id] = u.id
 
-      flash[:notice] = 'Successfully logged in!'
       redirect_to root_url
     else
-      flash.now[:alert] = 'Try again!'
+      flash.now[:alert] = 'Incorrect email or password.'
       render :new
     end
 

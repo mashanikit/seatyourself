@@ -1,0 +1,13 @@
+<%= render "profile" %>
+    <div class="restaurants">
+      <% @restaurant.each do |restaurant| %>
+        <h2><%= restaurant.name %> | <%= restaurant.reservations.count %> Reservations</h2>
+        <p><%= restaurant.price_range%></p>
+          <% restaurant.reservations.each do |reservation| %>
+            <p><%= reservation.user.name %>, Party size: <%= reservation.size %></p>
+            <p><%= reservation.date %> at <%= reservation.time %></p>
+            <p><%= reservation.user.loyalty_points %> points</p>
+          <% end %>
+      <% end %>
+    </div>
+</div>
