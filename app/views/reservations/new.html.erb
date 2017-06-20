@@ -1,61 +1,5 @@
 <h1>Make A New Reservation</h1>
 
-
-<%= form_for([@restaurant, @reservation]) do |f| %>
-  <p>
-    <%= f.label :size, 'Size of Party' %><br>
-    <%= f.number_field :size, max: 8, min: 1 %>
-  </p>
-  <p>
-    <%= f.label :date, 'Please Choose A Date' %><br>
-    <%= f.date_field :date, min: Date.today %>
-  </p>
-
-<p>
-  <%=f.label :time, 'Please Choose A Time' %><br>
-  <%= f.time_field :time, min: @restaurant.opens, max: @restaurant.closes%>
-</p>
-
-
-  <p>
-
-    <%= f.label :time, 'Please Choose A Time' %><br>
-    <%= f.label :time, @restaurant.operating_hours %><br>
-    <%= f.select :time, ((@restaurant.opens)..(@restaurant.closes)).each.map{|i| i.to_s + ':00'} %>
-  </p>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "5:00pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "5:30pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "6:00pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "6:30pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "7:00pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "7:30pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "8:00pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "8:30pm") %>
-
-      <%= radio_button_tag(:time, "reservation") %>
-      <%= label_tag(:time, "9:00pm") %>
-    </p>
-  <p>
-    <%= f.submit "Save" %>
-  </p>
-<% end %>
-
 <% if @reservation.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being added</h2>
@@ -67,5 +11,24 @@
     </ul>
   </div>
 <% end %>
+<%= form_for([@restaurant, @reservation]) do |f| %>
+  <p>
+    <%= f.label :size, 'Size of Party' %><br>
+    <%= f.number_field :size, max: 8, min: 1 %>
+  </p>
+  <p>
+    <%= f.label :date, 'Please Choose A Date' %><br>
+    <%= f.date_field :date, min: Date.today %>
+  </p>
 
-<%
+  <p>
+
+    <%= f.label :time, 'Please Choose A Time' %><br>
+    <%= f.label :time, @restaurant.operating_hours %><br>
+    <%= f.select :time, ((@restaurant.opens)..(@restaurant.closes)).each.map{|i| i.to_s + ':00'} %>
+  </p>
+
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+<% end %>
