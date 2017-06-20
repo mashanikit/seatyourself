@@ -1,4 +1,10 @@
 <h1>My Profile</h1>
+<div class="user_info">
+  <h2><%= @user.name %></h2>
+  <p>Email: <%= @user.email %></p>
+  <p>Phone Number: <%= @user.number %></p>
+  <p>Loyalty Points: <%= @user.loyalty_points %></p>
+</div>
 <div class="user_show">
   <div class="profile_links">
     <h2 class="link1"><%= link_to "My Reservations", users_path %></h2>
