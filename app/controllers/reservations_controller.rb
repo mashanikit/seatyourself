@@ -19,19 +19,28 @@ class ReservationsController < ApplicationController
     @reservation.user_id = session[:user_id]
 
     @reservation.restaurant = @restaurant
-
-   # confirmation = @reservation.date.time
+    # confirmation = @reservation.date.time
     if @reservation.save
       @reservation.user.increment!(:loyalty_points, 5)
-      flash[:notice] = “Your reservation has been successfully created for #{@reservation.date.strftime(“%b %d”)} at #{@reservation.human_time}”
+      flash[:notice] = "Your reservation has been successfully created for #{@reservation.date.strftime("%b %d")} at #{@reservation.human_time}"
 
-     redirect_to restaurant_path(params[:restaurant_id])
+      redirect_to restaurant_path(params[:restaurant_id])
+
     else
       render :new
     end
   end
 
   def edit
+    @restaurant = Restaurant.find(params[:id])
+
+    if current_user.id == @restaurant.owner_id
+      render :edit
+    else
+      flash[:alert] = 'You are not authorized to edit this restaurant mf'
+      redirect_to root_path
+    end
+
   end
 
   def update
@@ -53,9 +62,10 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:size, :date, :time)
   end
   def restaurant?
-    @restaurant = Restaurant.find(params[:restaurant_id])
-  end
-  def reservation?
-    @reservation = Reservation.find(params[:id])
-  end
+      @restaurant = Restaurant.find(params[:restaurant_id])
+    end
+    def reservation?
+      @reservation = Reservation.find(params[:id])
+    end
+
 end

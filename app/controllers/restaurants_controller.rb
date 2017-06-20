@@ -29,6 +29,13 @@ class RestaurantsController < ApplicationController
 
   def edit
     @restaurant = Restaurant.find(params[:id])
+
+    if current_user.id == @restaurant.owner_id
+      render :edit
+    else
+      flash[:alert] = 'You are not authorized to edit this restaurant mf'
+      redirect_to root_path
+    end
   end
 
   def update
@@ -49,4 +56,7 @@ class RestaurantsController < ApplicationController
   def restaurant_params
     params.require(:restaurant).permit(:name, :neighbourhood, :address, :cuisine_type, :opens, :closes, :capacity, :image, :menu, :description, :price_range)
   end
+
+
+
 end

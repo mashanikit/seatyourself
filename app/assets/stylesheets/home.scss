@@ -35,18 +35,21 @@ h1 {
 .restaurants {
   border: rgb(78, 23, 35) solid 7px;
   margin: 40px;
-  padding: 3em;
+  padding: 4em;
   box-shadow: 10px 10px 5px #888888;
   @include clearfix;
   p {
-    padding: 7px;
+    padding: 1px;
+    padding-left: 4em;
+    text-align: left;
   }
-  p,
+
   h2,
   h3,
   a {
     text-align: left;
     text-decoration: none;
+    padding-left: 1.5em;
     &:visited,
     &:link {
       color: rgb(78, 23, 35);
@@ -59,6 +62,6 @@ h1 {
   }
   h3 {
     padding-top: 1em;
-    padding-bottom: 1em;
+    padding-bottom: 5px;
   }
 }
