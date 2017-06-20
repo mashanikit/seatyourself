@@ -18,13 +18,11 @@
 
 
   <p>
-<<<<<<< HEAD
-=======
+
     <%= f.label :time, 'Please Choose A Time' %><br>
     <%= f.label :time, @restaurant.operating_hours %><br>
     <%= f.select :time, ((@restaurant.opens)..(@restaurant.closes)).each.map{|i| i.to_s + ':00'} %>
   </p>
->>>>>>> 168b9f2f6a80034f4057757a1bd40221c66224b1
 
       <%= radio_button_tag(:time, "reservation") %>
       <%= label_tag(:time, "5:00pm") %>
