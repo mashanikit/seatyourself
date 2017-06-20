@@ -38,6 +38,16 @@ class ReservationsController < ApplicationController
   end
 
   def edit
+    @restaurant = Restaurant.find(params[:id])
+
+    if current_user.id == @restaurant.owner_id
+      render :edit
+    else
+      flash[:alert] = 'You are not authorized to edit this restaurant mf'
+      redirect_to root_path
+    end
+  end
+
   end
 
   def update
