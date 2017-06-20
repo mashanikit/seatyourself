@@ -17,9 +17,9 @@
   <% if current_user %>
   <%= link_to "Reserve Now", new_restaurant_reservation_path(@restaurant)%>
 
-<% else %>
-  <%= link_to "Sign Up", new_users_path %>
-<% end %>
+  <% else %>
+    <%= link_to "Sign Up", new_users_path %>
+  <% end %>
 
 
 </div>

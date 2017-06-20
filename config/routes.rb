@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'home/index'
   root 'home#index'
-
-  resource :users, only: [:new, :create]
+  get 'users/own_restaurants' => 'users#show'
+  resource :users, only: [:new, :create, :show, :edit, :update]
   resource :sessions, only: [:new, :create, :destroy]
   resources :restaurants do
     resources :reservations

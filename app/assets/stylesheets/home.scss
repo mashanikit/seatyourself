@@ -11,7 +11,6 @@
   height: 500px;
   width: 100%;
   margin-top: 1.5em;
-  margin-left: 1.5em;
   z-index: 100;
 }
 h1 {
@@ -30,11 +29,14 @@ h1 {
     size: 40px;
   }
 }
-.index_restaurant {
+.index_restaurant,
+.reservations,
+.restaurants {
   border: rgb(78, 23, 35) solid 7px;
   margin: 40px;
   padding: 3em;
   box-shadow: 10px 10px 5px #888888;
+  @include clearfix;
   p,
   h2,
   h3,

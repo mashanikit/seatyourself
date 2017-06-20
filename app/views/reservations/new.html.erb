@@ -11,10 +11,14 @@
     <%= f.date_field :date, min: Date.today %>
   </p>
 
+<p>
+  <%=f.label :time, 'Please Choose A Time' %><br>
+  <%= f.time_field :time, min: @restaurant.opens, max: @restaurant.closes%>
+</p>
 
-<h3> Reservation Time</h3>
 
   <p>
+
       <%= radio_button_tag(:time, "reservation") %>
       <%= label_tag(:time, "5:00pm") %>
 
@@ -45,4 +49,16 @@
   <p>
     <%= f.submit "Save" %>
   </p>
+<% end %>
+
+<% if @reservation.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being added</h2>
+
+    <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
 <% end %>

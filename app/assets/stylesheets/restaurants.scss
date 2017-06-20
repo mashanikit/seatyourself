@@ -17,10 +17,14 @@
   weight: bold;
   family: $orbitron;
   }
+  margin-left: 9em;
   line-height: 1.5em;
   color: rgba(56, 48, 50, 0.87);
 
+
 }
+
+
 
 .info > p {
   font-size: 20px;
@@ -36,13 +40,16 @@
 
 
 .restaurant_image {
+  margin-top: 20px;
+  width: 100%;
   width: 95%;
 }
 
 .back_restaurants {
   text-decoration: none;
   font-weight: bold;
-  &:link{
+  &:link,
+  &:visited{
     color: rgb(78, 23, 35);
   }
   &:hover{
